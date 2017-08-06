@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Espn Fantasy Football Test</title>
+</head>
+<body>
+<h1>ESPN Fantasy Football App</h1>
+<form action='/' method="POST">
+<p>League ID:</p>
+<input type="text" name="league_id">
+<p>Year:</p>
+<input type="text" name="league_year">
+<input type="submit" value="View League">
+
+<hr>
+% if league:
+	% for team in league.teams
+	<p>{{team.team_name}} - {{team.owner}} [{{team.team_abbrev}}] ({{team.wins}}-{{team.losses}})</p>
+	% endfor
+% endif
+</form>
+</body>
+</html>
